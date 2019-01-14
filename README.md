@@ -21,7 +21,7 @@ Coming soon…
 
 Add the dependency to your project:
 
-```
+```swift
 .package(url: "https://github.com/morpheby/Cupholder.git", from: "1.0.0")
 ```
 
@@ -33,7 +33,7 @@ Compile and use as framework.
 
 ### Register a class to protocol
 
-```
+```swift
   Inject<MyServiceType>().registration = Constructor(Shared({
       return MyDefaultService()
   }))
@@ -43,7 +43,7 @@ Compile and use as framework.
 
 Option 1: Use property injection with saved context
 
-```
+```swift
 class MyDefaultOtherService: MyOtherServiceType, Injection {
     var injector: Injector!
 
@@ -53,7 +53,7 @@ class MyDefaultOtherService: MyOtherServiceType, Injection {
 
 Option 2: Use property injection without saving context
 
-```
+```swift
 class MyDefaultOtherService: MyOtherServiceType {
     var a: MyServiceType = InstanceOf<MyServiceType>().inject()
     // Don't use lazy in this case, since it will break DI context
@@ -61,8 +61,7 @@ class MyDefaultOtherService: MyOtherServiceType {
 
 Option 3: Use injection from context
 
-```
-
+```swift
 class MyDefaultOtherService: MyOtherServiceType, Injection {
     var injector: Injector!
 
@@ -74,7 +73,7 @@ class MyDefaultOtherService: MyOtherServiceType, Injection {
 
 Option 4: Injection from factory
 
-```
+```swift
 class MyDefaultOtherService: MyOtherServiceType, Injection {
     var a: MyServiceType
     
@@ -95,8 +94,7 @@ class MyDefaultOtherService: MyOtherServiceType, Injection {
 
 You can update current DI context with a custom object (i.e. some shared response from server):
 
-```
-
+```swift
 class MyDefaultOtherService: MyOtherServiceType, Injection {
     var injector: Injector!
 
