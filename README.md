@@ -87,6 +87,11 @@ class MyDefaultOtherService: MyOtherServiceType, Injection {
   }))
 ```
 
+Option 5: Injection from root global context
+
+```swift
+    var a: MyServiceType = InstanceOf<MyServiceType>().inject()
+```
 
 > Note: You can freely combine those methods as you need
 
