@@ -54,8 +54,8 @@ class MyDefaultOtherService: MyOtherServiceType, Injection {
 Option 2: Use property injection without saving context
 
 ```
-class MyDefaultOtherService: MyOtherServiceType, Injection {
-    var a: MyServiceType = injector.instanceOf().inject()
+class MyDefaultOtherService: MyOtherServiceType {
+    var a: MyServiceType = InstanceOf<MyServiceType>().inject()
     // Don't use lazy in this case, since it will break DI context
 ```
 
